@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    padding: 10px;
+    background-color: rgb(255, 174, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav .navatas h1 {
+    color: white;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    height: calc(100vh - 120px);
+    padding: 20px;
+    gap: 20px; /* Menambahkan jarak antara container dan art */
+}
+
+.container {
+    width: 300px; /* Mengurangi lebar untuk proporsi yang lebih baik */
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px; /* Menambahkan sudut membulat */
+    
+}
+
+.art {
+    flex-grow: 1;
+    background-image: url("foto.jpg");
+    background-size: cover; /* Memastikan gambar menutupi seluruh area */
+    background-position: center; /* Memposisikan gambar di tengah */
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    border-radius: 10px; /* Menambahkan sudut membulat */
+    position: relative; /* Untuk penempatan overlay */
+}
+
+/* Menambahkan overlay untuk meningkatkan keterbacaan teks */
+.art::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Warna putih dengan transparansi */
+    border-radius: 10px;
+}
+
+.art h1, .art #profile-content, .art button {
+    position: relative; /* Memastikan konten berada di atas overlay */
+    z-index: 1;
+}
+
+.profile-image {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #ffae00; /* Mengubah warna border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    border-radius: 10px; /* Menambahkan sudut membulat */
+}
+
+#profile-content {
+    max-height: 300px; /* Meningkatkan tinggi maksimum */
+    overflow-y: auto; /* Menambahkan scrollbar vertikal jika konten melebihi max-height */
+    padding-right: 10px; /* Ruang untuk scrollbar */
+}
+
+/* Gaya scrollbar untuk Webkit browsers */
+#profile-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#profile-content::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.5);
+}
+
+#profile-content::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.7);
+    border-radius: 4px;
+}
+
+#profile-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.8);
+}
+.ftr {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+button {
+    background-color: rgb(255, 174, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgb(230, 157, 0);
+}

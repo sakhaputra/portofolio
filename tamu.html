@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tamu - Sakha Putra Pratama</title>
+    <link rel="stylesheet" href="gaya.css">
+    <style>
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .form-container h2 {
+            text-align: center;
+            color: rgb(255, 174, 0);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input[type="submit"] {
+            background-color: rgb(255, 174, 0);
+            color: white;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: rgb(230, 157, 0);
+        }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Selamat Datang, Tamu!</h2>
+        <p>Silakan isi form berikut untuk melanjutkan ke website Sakha Putra Pratama.</p>
+        <?php if (isset($error)) : ?>
+            <p class="error"><?php echo $error; ?></p>
+        <?php endif; ?>
+        <form action="tamu.php" method="post">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Masuk ke Website">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
